@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto Bianchi Proietti | ITT Terni</title>
+    <!-- Font esterni, icone e foglio di stile principale -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra di navigazione principale del sito -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-globe"></i> <span>Progetto Bianchi Proietti</span>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="destinazioni.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Destinazioni</a>
+                <a href="comparatore.html" class="nav-link"><i class="fas fa-balance-scale"></i> Confronta</a>
+                <a href="info.html" class="nav-link"><i class="fas fa-info-circle"></i> Info</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sezione principale di presentazione del sito -->
+    <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-orbs" aria-hidden="true"></div>
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-graduation-cap"></i> Programma Erasmus · A.S. 2025/2026</div>
+            <h1>Il tuo viaggio<br><span class="hero-highlight">inizia qui</span></h1>
+            <p>Esplora 5 città europee con foto, dati e confronti per scegliere la destinazione più adatta.</p>
+            <div class="hero-buttons">
+                <a href="destinazioni.html" class="btn btn-primary">Scopri le destinazioni <i class="fas fa-arrow-right"></i></a>
+                <a href="comparatore.html" class="btn btn-secondary">Confronta le città</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Città</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Paesi</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Corsi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtri di ricerca dinamica per parole chiave e indirizzo di studio -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-card">
+                <div class="search-row">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Cerca città o paese...">
+                    </div>
+                    <select id="profileFilter" class="select-custom"></select>
+                    <button id="resetBtn" class="btn-reset" type="button"><i class="fas fa-rotate-left"></i> Azzera</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione contenente la griglia delle città destinarie -->
+    <section class="cities-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-map-marker-alt"></i> Le nostre destinazioni</h2>
+                <p>Scopri tutte le città disponibili per la mobilità internazionale</p>
+            </div>
+            <div class="cities-grid" id="citiesList"></div>
+        </div>
+    </section>
+
+    <!-- Piè di pagina con link utili, crediti e copyright -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><i class="fas fa-globe"></i> Progetto Bianchi Proietti</div>
+                    <p>ITT "Allievi-Sangallo" Terni</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Link utili</h4>
+                    <a href="index.html">Home</a>
+                    <a href="destinazioni.html">Destinazioni</a>
+                    <a href="comparatore.html">Confronto</a>
+                    <a href="info.html">Info</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Sviluppato da</h4>
+                    <p>Daniele Bianchi<br>Matteo Proietti</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Progetto Bianchi Proietti </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Finestra di dialogo dei dettagli -->
+    <div id="modal" class="modal">
+        <div class="modal-container">
+            <button type="button" class="modal-close" aria-label="Chiudi"><i class="fas fa-times"></i></button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Script per i dati delle città e la logica interattiva del frontend -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
